@@ -35,6 +35,7 @@ func parsePage(link string) (page, error) {
 		return page{}, err
 	}
 
+	defer resp.Body.Close()
 	links, err := linkparser.Parse(resp.Body)
 	if err != nil {
 		return page{}, err
