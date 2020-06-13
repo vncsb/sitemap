@@ -26,7 +26,7 @@ func GenerateSitemap(locations []string) (string, error) {
 		sm.URL = append(sm.URL, loc)
 	}
 
-	out, err := xml.MarshalIndent(sm, "", "")
+	out, err := xml.MarshalIndent(sm, "", "	")
 	if err != nil {
 		return "", err
 	}
