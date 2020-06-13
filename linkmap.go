@@ -1,7 +1,6 @@
 package sitemap
 
 import (
-	"fmt"
 	"net/http"
 	"net/url"
 	"strings"
@@ -58,7 +57,6 @@ func crawl(link string, foundLocations map[string]bool) {
 	}
 
 	foundLocations[page.location] = true
-	fmt.Println("Found: " + page.location)
 	domain := page.domain
 	for _, l := range page.links {
 		location := formatLink(l.Href, domain, page.scheme)
